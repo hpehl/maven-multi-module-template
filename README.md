@@ -121,7 +121,7 @@ Validates the codebase by applying the following maven goals:
 - [`formatter-maven-plugin:validate`](https://code.revelc.net/formatter-maven-plugin/validate-mojo.html)
 - [`impsort-maven-plugin:check`](https://code.revelc.net/impsort-maven-plugin/check-mojo.html)
 
-The goals use the plugin configuration in [pom.xml](pom.xml) and the resources in [build-config/src/main/resources/etc](build-config/src/main/resources/etc).
+The goals use the plugin configuration in [pom.xml](pom.xml) and the resources in [build-config/src/main/resources/etc](build-config/src/main/resources/etc). If the script fails, make sure to run `mvn install` in advance.
 
 ## `release.sh`
 

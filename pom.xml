@@ -28,7 +28,7 @@
 
     <groupId>io.github.hpehl</groupId>
     <artifactId>template-parent</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Template :: Parent</name>
     <description>Description</description>
