@@ -37,10 +37,9 @@ Template for a multi module project using Maven 3.2.x and Java 11+.
 5. Adjust or remove unnecessary plugins/configuration in `pom.xml`
 6. Add dependencies, code, and tests
 
-If you want to keep a changelog and the contribution guide, make the following adjustments:
+If you want to keep the contribution guide, make the following adjustments:
 
-- Replace the URLs at the bottom of `CHANGELOG.md`
-- Replace all URLs and paths containing `maven-single-module-template` in `CONTRIBUTING.md`
+- Replace all URLs and paths containing `maven-multi-module-template` in `CONTRIBUTING.md`
 
 # Release Management & Deployment
 

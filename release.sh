@@ -120,7 +120,7 @@ setup_colors
 FINAL_VERSION="${RELEASE_VERSION}.Final"
 SNAPSHOT_VERSION="${NEXT_VERSION}-SNAPSHOT"
 TAG="v${RELEASE_VERSION}"
-WORKFLOW_URL="https://github.com/hpehl/maven-single-module-template/actions/workflows/release.yml"
+WORKFLOW_URL="https://github.com/hpehl/maven-multi-module-template/actions/workflows/release.yml"
 
 is_semver "${RELEASE_VERSION}" || die "Release version is not a semantic version"
 is_semver "${NEXT_VERSION}" || die "Next version is not a semantic version"
