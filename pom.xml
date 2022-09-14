@@ -68,15 +68,15 @@
         <!-- Dependency versions -->
         <version.checkstyle.config>1.0.8.Final</version.checkstyle.config>
         <version.eclipse.collections>11.1.0</version.eclipse.collections>
-        <version.junit>5.8.2</version.junit>
+        <version.junit>5.9.0</version.junit>
         <version.logback>1.4.0</version.logback>
-        <version.slf4j>2.0.0</version.slf4j>
+        <version.slf4j>2.0.1</version.slf4j>
 
         <!-- Plugin versions -->
         <version.checkstyle.plugin>3.1.1</version.checkstyle.plugin>
         <version.enforcer.plugin>3.0.0-M3</version.enforcer.plugin>
         <version.formatter.plugin>2.20.0</version.formatter.plugin>
-        <version.impsort.plugin>1.6.2</version.impsort.plugin>
+        <version.impsort.plugin>1.7.0</version.impsort.plugin>
         <version.keepachangelog>2.1.1</version.keepachangelog>
         <version.license.plugin>4.1</version.license.plugin>
         <version.nexus.staging.plugin>1.6.13</version.nexus.staging.plugin>
