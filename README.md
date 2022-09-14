@@ -58,7 +58,7 @@ The project already fulfills many requirements and recommendations for deploying
 The script `release.sh` starts a new release. To adjust the script to your needs, replace the variable `WORKFLOW_URL`.
 
 ```shell
-./release <release-version> <next-version>
+./release.sh <release-version> <next-version>
 ```
 
 The release script verifies
@@ -126,4 +126,4 @@ The goals use the plugin configuration in [pom.xml](pom.xml) and the resources i
 
 ## `release.sh`
 
-Starts the release (see above). 
+Starts a new release (see [above](#release-management--deployment)). 
