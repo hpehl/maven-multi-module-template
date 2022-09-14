@@ -1,23 +1,44 @@
-# Compiled class file
-*.class
+# idea
+**/.idea
+**/*.iml
+**/*.ipr
+**/*.iws
+out
 
-# Log file
-*.log
+# netbeans
+nbactions.xml
+nb-configuration.xml
+catalog.xml
 
-# BlueJ files
-*.ctxt
+# vim
+*.swp
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# temp files
+*~
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# java
 hs_err_pid*
+CosServices.cfg
+
+# maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+target
+**/target
+
+# eclipse
+.project
+.settings
+.classpath
+.metadata
+
+# svn
+.svn
+
+# gradle
+.gradle
+**/gradle/wrapper
+
+# custom
