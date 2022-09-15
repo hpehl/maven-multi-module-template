@@ -28,7 +28,7 @@
 
     <groupId>io.github.hpehl</groupId>
     <artifactId>maven-multi-module-template-parent</artifactId>
-    <version>0.0.1.Final</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Maven Multi Module Template :: Parent</name>
     <description>Template for a multi module project using Maven 3.2.x and Java 11+</description>
