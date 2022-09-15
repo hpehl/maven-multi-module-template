@@ -45,16 +45,19 @@ If you want to keep the contribution guide, make the following adjustments:
 
 There are many options for how to release and deploy new versions. This project takes an opinionated approach using a bash script to kick off a new release and a GitHub workflow for doing the actual release and deploying all artifacts to Maven Central.
 
-The project already fulfills many requirements and recommendations for deploying to Maven Central:
+The project already fulfills all requirements and recommendations for deploying to Maven Central:
 
-- the POM contains all required metadata
-- source and Javadoc JARs are produced
-- all artifacts are signed
-- `org.sonatype.plugins:nexus-staging-maven-plugin` is used for deployment
+- the POM contains all [required metadata](https://central.sonatype.org/publish/requirements/#sufficient-metadata)
+- [source and Javadoc JARs](https://central.sonatype.org/publish/requirements/#supply-javadoc-and-sources) are produced
+- all artifacts are [signed](https://central.sonatype.org/publish/requirements/#sign-files-with-gpgpgp)
+- the [Nexus Staging Maven Plugin](https://central.sonatype.org/publish/publish-maven/#nexus-staging-maven-plugin-for-deployment-and-release) is used for deployment
 
 ## Release Script
 
-The script `release.sh` starts a new release. To adjust the script to your needs, replace the variable `WORKFLOW_URL`.
+The script `release.sh` starts a new release. You should make the following adjustments:
+
+- specify your git remotes using the array `GIT_REMOTES`. If your working on a forked repository this should probably be `("origin" "upstream")`
+- adjust the variable `WORKFLOW_URL` to your needs
 
 ```shell
 ./release.sh <release-version> <next-version>
@@ -78,24 +81,16 @@ If everything is fine, the script
 
 By pushing the tag to GitHub, the release workflow kicks in.
 
-## GitHub Workflow
+## Release Workflow
 
-The GitHub workflow operates fully automated and relies on several secrets that have to be configured:
+The release workflow is defined in `release.yml`. It operates fully automated and relies on several secrets that have to be configured:
 
 - `OSSRH_USERNAME`: The username for the Sonatype JIRA
 - `OSSRH_PASSWORD`: The password for the Sonatype JIRA
 - `MAVEN_GPG_PASSPHRASE`: The passphrase for your private GPG key
 - `MAVEN_GPG_PRIVATE_KEY`: The private key in ASCII format. You can use a command like `gpg --armor --export-secret-keys <key-id> | pbcopy` to export and copy the private key to the clipboard (on macOS).
 
-The release workflow builds and deploys the project by running
-
-1. `mvn install` and then
-2. `mvn deploy -P release`
-
-Upon successful execution, a new GitHub release is created:
-
-- The name of the release uses the env variable `PROJECT_NAME` defined for the job `release` in `release.yml`. Adjust this variable to your needs.
-- The body of the release is the latest section from the changelog.
+The release workflow builds and deploys the project. Upon successful execution, a new GitHub release is created. The new release is named "Maven Multi Module Template <release-version>.Final". Adjust that to your needs by modifying the value `name` of the step `ncipollo/release-action` in `release.yml`.
 
 # Scripts
 
@@ -109,7 +104,7 @@ Formats the codebase by applying the following maven goals:
 - [`formatter-maven-plugin:format`](https://code.revelc.net/formatter-maven-plugin/format-mojo.html)
 - [`impsort-maven-plugin:sort`](https://code.revelc.net/impsort-maven-plugin/sort-mojo.html)
 
-The goals use the plugin configuration in [pom.xml](pom.xml) and the resources in [build-config/src/main/resources/etc](build-config/src/main/resources/etc).
+The goals use the plugin configuration in [pom.xml](pom.xml) and the resources in [etc](etc).
 
 ## `validate.sh`
 
@@ -121,7 +116,7 @@ Validates the codebase by applying the following maven goals:
 - [`formatter-maven-plugin:validate`](https://code.revelc.net/formatter-maven-plugin/validate-mojo.html)
 - [`impsort-maven-plugin:check`](https://code.revelc.net/impsort-maven-plugin/check-mojo.html)
 
-The goals use the plugin configuration in [pom.xml](pom.xml) and the resources in [build-config/src/main/resources/etc](build-config/src/main/resources/etc). If the script fails, make sure to run `mvn install` in advance.
+The goals use the plugin configuration in [pom.xml](pom.xml) and the resources in [etc](etc).
 
 ## `release.sh`
 

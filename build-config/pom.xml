@@ -21,13 +21,13 @@
 
     <parent>
         <groupId>io.github.hpehl</groupId>
-        <artifactId>template-parent</artifactId>
+        <artifactId>maven-multi-module-template-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>template-build-config</artifactId>
-    <name>Template :: Build :: Config</name>
+    <artifactId>maven-multi-module-template-build-config</artifactId>
+    <name>Maven Multi Module Template :: Build Config</name>
     <description>Build configuration for checkstyle, eclipse formatter and license check</description>
     <packaging>jar</packaging>
 

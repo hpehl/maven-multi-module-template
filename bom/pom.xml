@@ -21,21 +21,21 @@
 
     <parent>
         <groupId>io.github.hpehl</groupId>
-        <artifactId>template-parent</artifactId>
+        <artifactId>maven-multi-module-template-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>template-bom</artifactId>
+    <artifactId>maven-multi-module-template-bom</artifactId>
     <packaging>pom</packaging>
-    <name>Template :: BOM</name>
+    <name>Maven Multi Module Template :: BOM</name>
     <description>Bill of materials</description>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>temmplate-code</artifactId>
+                <artifactId>maven-multi-module-template-code</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

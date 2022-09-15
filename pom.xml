@@ -27,11 +27,11 @@
     </parent>
 
     <groupId>io.github.hpehl</groupId>
-    <artifactId>template-parent</artifactId>
+    <artifactId>maven-multi-module-template-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Template :: Parent</name>
-    <description>Description</description>
+    <name>Maven Multi Module Template :: Parent</name>
+    <description>Template for a multi module project using Maven 3.2.x and Java 11+</description>
     <inceptionYear>2022</inceptionYear>
 
     <licenses>
@@ -296,6 +296,12 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
