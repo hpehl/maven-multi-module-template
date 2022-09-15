@@ -23,7 +23,7 @@
     <parent>
         <groupId>io.github.hpehl</groupId>
         <artifactId>maven-multi-module-template-parent</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
