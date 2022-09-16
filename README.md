@@ -52,6 +52,8 @@ The project already fulfills all requirements and recommendations for deploying 
 - all artifacts are [signed](https://central.sonatype.org/publish/requirements/#sign-files-with-gpgpgp)
 - the [Nexus Staging Maven Plugin](https://central.sonatype.org/publish/publish-maven/#nexus-staging-maven-plugin-for-deployment-and-release) is used for deployment
 
+The project uses https://s01.oss.sonatype.org/ for the deployment to Maven Central. It's configured as property `repo.sonatype.url` in the POM. Please change the URL to your needs.
+
 ## Release Script
 
 The script `release.sh` starts a new release. You should make the following adjustments:
