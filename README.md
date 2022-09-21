@@ -92,7 +92,7 @@ The release workflow is defined in `release.yml`. It operates fully automated an
 - `MAVEN_GPG_PASSPHRASE`: The passphrase for your private GPG key
 - `MAVEN_GPG_PRIVATE_KEY`: The private key in ASCII format. You can use a command like `gpg --armor --export-secret-keys <key-id> | pbcopy` to export and copy the private key to the clipboard (on macOS).
 
-The release workflow builds and deploys the project. Upon successful execution, a new GitHub release is created. The name of the release uses the name of the project as specified in the POM followed by <release-version>.Final.
+The release workflow builds and deploys the project. Upon successful execution, a new GitHub release is created. The name of the release uses the name of the project as specified in the POM followed by `<release-version>.Final`.
 
 # Scripts
 
