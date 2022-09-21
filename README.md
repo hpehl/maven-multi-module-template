@@ -58,7 +58,7 @@ The project uses https://s01.oss.sonatype.org/ for the deployment to Maven Centr
 
 The script `release.sh` starts a new release. You should make the following adjustments:
 
-- specify your git remotes using the array `GIT_REMOTES`. If your working on a forked repository this is most likely `("origin" "upstream")`
+- specify your git remotes using the array `GIT_REMOTES`. If you're working on a forked repository this is most likely `("origin" "upstream")`
 - adjust the variable `WORKFLOW_URL` to your needs
 
 ```shell
