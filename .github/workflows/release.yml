@@ -62,12 +62,17 @@ jobs:
         with:
           path: ./CHANGELOG.md
           version: ${{ steps.get-version.outputs.version-without-v }}
+      - name: Read Name
+        id: read-name
+        run: |
+          echo "::set-output name=name::$(mvn org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluate -Dexpression=project.name -q -DforceStdout)"
+        shell: bash
       - name: Create GitHub Release
         id: create-gh-release
         uses: ncipollo/release-action@v1.10.0
         with:
           tag: ${{ steps.get-version.outputs.version }}
-          name: Maven Multi Module Template ${{ steps.get-version.outputs.version-without-v }}.Final
+          name: ${{ steps.read-name.outputs.name }} ${{ steps.get-version.outputs.version-without-v }}.Final
           body: ${{ steps.read-changelog.outputs.changes }}
           draft: false
           prerelease: false

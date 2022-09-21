@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Add `GIT_REMOTES` array to support multiple remotes
+- Use `name` from POM for GitHub releases
+
 ## [0.0.1] - 2022-09-15
 
 Initial release

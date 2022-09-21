@@ -118,6 +118,7 @@ parse_params "$@"
 setup_colors
 
 FINAL_VERSION="${RELEASE_VERSION}.Final"
+GIT_REMOTES=("origin") # Use something like ("origin" "upstream") if you're working on a fork with multiple remotes
 SNAPSHOT_VERSION="${NEXT_VERSION}-SNAPSHOT"
 TAG="v${RELEASE_VERSION}"
 WORKFLOW_URL="https://github.com/hpehl/maven-multi-module-template/actions/workflows/release.yml"
@@ -134,7 +135,7 @@ msg ""
 msg "If you decide to continue, this script will "
 msg ""
 msg "   1. Bump the version to ${CYAN}${FINAL_VERSION}${NOFORMAT}"
-msg "   2. Update the ${CYAN}changelog${NOFORMAT} (there should already be entries in the ${CYAN}Unreleased${NOFORMAT} section!)"
+msg "   2. Update header and links in the ${CYAN}changelog${NOFORMAT} (there should already be entries in the ${CYAN}Unreleased${NOFORMAT} section!)"
 msg "   3. Create a tag for ${CYAN}${TAG}${NOFORMAT}"
 msg "   4. ${CYAN}Commit${NOFORMAT} and ${CYAN}push${NOFORMAT} to remote repository (which will trigger the ${CYAN}release workflow${NOFORMAT} at GitHub)"
 msg "   5. Bump the version to ${CYAN}${SNAPSHOT_VERSION}${NOFORMAT}"
@@ -158,12 +159,21 @@ mvn --quiet -DskipModules keepachangelog:release &> /dev/null
 sed -E -i '' -e 's/\[([0-9]+\.[0-9]+\.[0-9]+)\.Final\]/[\1]/g' -e 's/v([0-9]+\.[0-9]+\.[0-9]+)\.Final/v\1/g' CHANGELOG.md
 msg "Push changes"
 git commit --quiet -am "Release ${RELEASE_VERSION}"
-git push --quiet origin main &> /dev/null
+for remote in "${GIT_REMOTES[@]}"; do
+  git push --quiet "${remote}" main &> /dev/null
+  msg "    ${YELLOW}✓${NOFORMAT} ${remote}"
+done
 msg "Push tag"
 git tag "${TAG}"
-git push --quiet --tags origin main &> /dev/null
+for remote in "${GIT_REMOTES[@]}"; do
+  git push --quiet --tags "${remote}" main &> /dev/null
+  msg "    ${YELLOW}✓${NOFORMAT} ${remote}"
+done
 ./versionBump.sh "${SNAPSHOT_VERSION}"
 msg "Push changes"
 git commit --quiet -am "Next is ${NEXT_VERSION}"
-git push --quiet origin main &> /dev/null
+for remote in "${GIT_REMOTES[@]}"; do
+  git push --quiet "${remote}" main &> /dev/null
+  msg "    ${YELLOW}✓${NOFORMAT} ${remote}"
+done
 msg "Done. Watch the release workflow at ${WORKFLOW_URL}"
