@@ -32,6 +32,7 @@
     <packaging>pom</packaging>
     <name>Maven Multi Module Template</name>
     <description>Template for a multi module project using Maven 3.2.x and Java 11+</description>
+    <url>https://github.com/hpehl/maven-multi-module-template</url>
     <inceptionYear>2022</inceptionYear>
 
     <licenses>
@@ -46,6 +47,15 @@
         <name>Red Hat</name>
         <url>https://developers.redhat.com/</url>
     </organization>
+    <developers>
+        <developer>
+            <name>Harald Pehl</name>
+            <id>hpehl</id>
+            <email>hpehl@redhat.com</email>
+            <organization>Red Hat</organization>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 
     <scm>
         <connection>scm:git:${repo.scm.connection}</connection>
