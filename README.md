@@ -61,6 +61,8 @@ The script `release.sh` starts a new release. You should make the following adju
 - specify your git remotes using the array `GIT_REMOTES`. If you're working on a forked repository this is most likely `("origin" "upstream")`
 - adjust the variable `WORKFLOW_URL` to your needs
 
+The release script requires two parameters:
+
 ```shell
 ./release.sh <release-version> <next-version>
 ```
