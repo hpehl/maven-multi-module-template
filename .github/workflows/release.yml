@@ -69,7 +69,7 @@ jobs:
         shell: bash
       - name: Create GitHub Release
         id: create-gh-release
-        uses: ncipollo/release-action@v1.11.1
+        uses: ncipollo/release-action@v1.11.2
         with:
           tag: ${{ steps.get-version.outputs.version }}
           name: ${{ steps.read-name.outputs.name }} ${{ steps.get-version.outputs.version-without-v }}.Final
