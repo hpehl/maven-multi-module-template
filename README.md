@@ -1,6 +1,6 @@
 # Maven Multi Module Template
 
-Template for a multi module project using Maven 3.2.x and Java 11+.
+Template for a multi module project using Maven 3.2.x and Java 17+.
 
 # Features
 
@@ -15,7 +15,7 @@ Template for a multi module project using Maven 3.2.x and Java 11+.
 - [WildFly](https://github.com/wildfly/wildfly-checkstyle-config) [checkstyle](https://checkstyle.sourceforge.io/) configuration
 - [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) with rules enforcing
   - secure repositories over HTTPS
-  - Java >=11
+  - Java >=17
   - Maven >= 3.2.5
 - [Maven License Plugin](https://mycila.carbou.me/license-maven-plugin/)
 - [Maven Formatter Plugin](https://code.revelc.net/formatter-maven-plugin/)
