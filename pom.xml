@@ -80,7 +80,7 @@
         <version.checkstyle.config>1.0.8.Final</version.checkstyle.config>
         <version.eclipse.collections>13.0.0</version.eclipse.collections>
         <version.junit>6.0.1</version.junit>
-        <version.logback>1.5.20</version.logback>
+        <version.logback>1.5.21</version.logback>
         <version.slf4j>2.0.17</version.slf4j>
 
         <!-- Plugin versions -->
